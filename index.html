@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adam Ayliffe | Enterprise Web Developer & Automation Architect</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f4ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                            900: '#312e81',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased selection:bg-indigo-500 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-xl shadow-lg shadow-indigo-500/30 group-hover:scale-105 transition-transform">
+                    AA
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight block">Adam Ayliffe</span>
+                    <span class="text-xs text-indigo-400 font-medium tracking-wide">Enterprise Solutions & Automation</span>
+                </div>
+            </a>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#services" class="hover:text-indigo-400 transition-colors">Services</a>
+                <a href="#tech-stack" class="hover:text-indigo-400 transition-colors">Architecture</a>
+                <a href="#power-automate" class="hover:text-indigo-400 transition-colors">Power Automate</a>
+                <a href="#simulator" class="hover:text-indigo-400 transition-colors">Live Demo</a>
+                <a href="#case-studies" class="hover:text-indigo-400 transition-colors">Case Studies</a>
+                <a href="#portfolio" class="hover:text-indigo-400 transition-colors">ROI Calculator</a>
+                <a href="#contact" class="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/20 transition-all hover:scale-105">Request Proposal</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-400 hover:text-white">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-b border-slate-800 bg-slate-900">
+            <div class="flex flex-col gap-4 text-sm font-medium text-slate-300">
+                <a href="#services" class="mobile-link hover:text-indigo-400">Services</a>
+                <a href="#tech-stack" class="mobile-link hover:text-indigo-400">Architecture</a>
+                <a href="#power-automate" class="mobile-link hover:text-indigo-400">Power Automate</a>
+                <a href="#simulator" class="mobile-link hover:text-indigo-400">Live Demo</a>
+                <a href="#case-studies" class="mobile-link hover:text-indigo-400">Case Studies</a>
+                <a href="#portfolio" class="mobile-link hover:text-indigo-400">ROI Calculator</a>
+                <a href="#contact" class="text-center py-2.5 rounded-xl bg-indigo-600 text-white font-semibold">Request Proposal</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-44 md:pb-32 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/30 via-slate-950 to-slate-950 -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-xs font-semibold tracking-wide uppercase">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> Senior Freelance Web Developer & Cloud Engineer
+                    </div>
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                        Engineering High-Performance Web Systems & <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-violet-400">Enterprise Workflows</span>
+                    </h1>
+                    <p class="text-lg text-slate-400 max-w-2xl leading-relaxed">
+                        Partnering with growing businesses and enterprise clients to architect custom web applications (PHP, MySQL, Modern JavaScript) and eliminate operational bottlenecks through Microsoft Power Automate & Microsoft Entra ID integration.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-2">
+                        <a href="#contact" class="px-7 py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-xl shadow-indigo-600/30 transition-all flex items-center gap-2">
+                            Schedule Consultation <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#services" class="px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-200 font-semibold transition-all">
+                            Explore Capabilities
+                        </a>
+                    </div>
+                    
+                    <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-900/80">
+                        <div>
+                            <div class="text-2xl font-bold text-white">120+</div>
+                            <div class="text-xs text-slate-400">Enterprise Deployments</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">850h+</div>
+                            <div class="text-xs text-slate-400">Annual Hours Automated</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">99.9%</div>
+                            <div class="text-xs text-slate-400">System Reliability</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-violet-600 rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                        <div class="relative bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl">
+                            <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">graph_api_provisioning.php</span>
+                            </div>
+                            <div class="py-4 font-mono text-xs text-indigo-300 space-y-2 overflow-x-auto">
+                                <p><span class="text-slate-500">// Secure OAuth 2.0 & Entra ID Graph Payload</span></p>
+                                <p>&#123;</p>
+                                <p class="pl-4"><span class="text-emerald-300">"accountEnabled"</span>: <span class="text-yellow-300">true</span>,</p>
+                                <p class="pl-4"><span class="text-emerald-300">"mailNickname"</span>: <span class="text-emerald-300">"a.ayliffe"</span>,</p>
+                                <p class="pl-4"><span class="text-emerald-300">"userPrincipalName"</span>: <span class="text-emerald-300">"a.ayliffe@enterprise.com"</span>,</p>
+                                <p class="pl-4"><span class="text-emerald-300">"usageLocation"</span>: <span class="text-emerald-300">"GB"</span>,</p>
+                                <p class="pl-4"><span class="text-emerald-300">"passwordPolicies"</span>: <span class="text-emerald-300">"DisableStrongPassword"</span></p>
+                                <p>&#125;</p>
+                            </div>
+                            <div class="mt-4 p-3 rounded-xl bg-indigo-950/50 border border-indigo-900/50 flex items-center gap-3">
+                                <div class="p-2 rounded-lg bg-indigo-600 text-white">
+                                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs font-semibold text-white">Cloud Architecture Ready</div>
+                                    <div class="text-[11px] text-indigo-300">Zero-trust security compliance & automated logging</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Services Section -->
+    <section id="services" class="py-20 bg-slate-900/40 border-y border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+                    Core Disciplines
+                </span>
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Specialized Professional Offerings</h2>
+                <p class="text-slate-400 text-base">
+                    Delivering end-to-end technical execution, strategic consulting, and bespoke training tailored to internal IT and development teams.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 1. Web Development -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-8 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-indigo-600/10 text-indigo-400 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="code-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Custom Web Development</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Architecting resilient, high-speed web applications utilizing PHP, HTML5, Tailwind CSS, JavaScript, and optimized MySQL databases with strict security protocols.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 hover:text-indigo-300">
+                        Discuss Web Architecture <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- 2. Web Design -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-8 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-violet-600/10 text-violet-400 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="layout" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">UI/UX Interface Design</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Designing clean, accessible, and responsive user interfaces that optimize conversion rates, user engagement, and brand credibility across all devices.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-violet-400 hover:text-violet-300">
+                        Explore UI/UX Services <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- 3. Automation -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-8 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-emerald-600/10 text-emerald-400 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Workflow Automation</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Eliminating manual data transfer via advanced Microsoft Power Automate cloud flows, connecting forms, Azure AD provisioning, and automated team notifications.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-emerald-400 hover:text-emerald-300">
+                        Automate Workflows <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- 4. Advice / Consulting -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-8 transition-all group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-amber-600/10 text-amber-400 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="lightbulb" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Technical Advisory & Audit</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Providing senior-level architecture reviews, database performance tuning, security vulnerability audits, and digital transformation roadmaps.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-amber-400 hover:text-amber-300">
+                        Book Strategy Session <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- 5. Training Sessions -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl p-8 transition-all group flex flex-col justify-between md:col-span-2 lg:col-span-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-2xl bg-cyan-600/10 text-cyan-400 flex items-center justify-center font-bold mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="graduation-cap" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3">Enterprise Staff Training Programs</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Conducting structured, hands-on masterclasses and workshops empowering internal engineering and administrative staff to independently build, maintain, and scale Power Automate workflows and secure web components.
+                        </p>
+                    </div>
+                    <a href="#contact" class="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300">
+                        Request Staff Training <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED TECHGRID SYSTEMS PORTFOLIO SHOWCASE -->
+    <section id="portfolio-showcase" class="py-20 bg-slate-950 border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+                    Client Case Studies & Live Artifacts
+                </span>
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">TechGrid Systems Production Deployments</h2>
+                <p class="text-slate-400 text-base">
+                    Explore live systems engineered by Adam Ayliffe featuring live status monitoring dashboards, GitHub automation utilities, and AI developer interfaces.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Status Dashboard -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group transition-all">
+                    <div>
+                        <div class="relative overflow-hidden bg-slate-950 border-b border-slate-800 aspect-video flex items-center justify-center">
+                            <img src="image_892066.png" alt="TechGrid Status Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute bottom-3 left-3 text-[11px] font-mono px-2.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/40 text-emerald-300">
+                                99.98% Operational
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-indigo-400 uppercase tracking-wider">Infrastructure Monitoring</span>
+                                <span class="text-xs text-slate-500">TechGrid Systems</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">System Health & Incident Status</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Real-time uptime telemetry, incident response metrics, and service health status monitors for critical microservices and cloud nodes.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://status.techgrid-systems.org.uk/" target="_blank" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 border border-slate-700">
+                            <span>Launch Live Status Portal</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2: GitHub Manager -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group transition-all">
+                    <div>
+                        <div class="relative overflow-hidden bg-slate-950 border-b border-slate-800 aspect-video flex items-center justify-center">
+                            <div class="grid grid-cols-2 w-full h-full">
+                                <img src="image_891ca2.png" alt="GitHub Manager UI 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-r border-slate-800">
+                                <img src="image_89193c.png" alt="GitHub Manager UI 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            </div>
+                            <div class="absolute bottom-3 left-3 text-[11px] font-mono px-2.5 py-1 rounded-md bg-indigo-500/20 border border-indigo-500/40 text-indigo-300">
+                                Repository Automation
+                            </div>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-indigo-400 uppercase tracking-wider">DevOps Utility</span>
+                                <span class="text-xs text-slate-500">TechGrid Systems</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">GitHub Manager Dashboard</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Streamlined repository orchestration tool providing rapid release management, automated branch synchronization, and developer workflow controls.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://techgrid-systems.github.io/github-manager/" target="_blank" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 border border-slate-700">
+                            <span>Launch GitHub Manager</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3: AI Platform -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between group transition-all">
+                    <div>
+                        <div class="relative overflow-hidden bg-slate-950 border-b border-slate-800 aspect-video flex items-center justify-center">
+                            <img src="image_89111e.png" alt="TechGrid AI Platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute bottom-3 left-3 text-[11px] font-mono px-2.5 py-1 rounded-md bg-violet-500/20 border border-violet-500/40 text-violet-300">
+                                Neural Interface
+                            </span>
+                        </div>
+                        <div class="p-6 space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-mono text-indigo-400 uppercase tracking-wider">Artificial Intelligence</span>
+                                <span class="text-xs text-slate-500">TechGrid Systems</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">TechGrid AI Workspace</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed">
+                                Advanced conversational AI interface and prompt engineering toolkit built for enterprise task automation and generative workflows.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="https://ai.techgrid-systems.org.uk/" target="_blank" class="w-full py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-xs transition-all flex items-center justify-center gap-2 border border-slate-700">
+                            <span>Launch AI Platform</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture & Tech Stack -->
+    <section id="tech-stack" class="py-20 bg-slate-900/20 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Enterprise Technology Stack</h2>
+                <p class="text-slate-400 text-base">
+                    A rigorously tested technology ecosystem built for speed, security, data integrity, and seamless cloud integrations.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- HTML5 -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="code" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">HTML5 Standards</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Semantic markup guaranteeing WCAG accessibility compliance, optimized search engine crawling, and robust native form validation.
+                    </p>
+                    <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-800 text-orange-300 inline-block">Semantic Markup</div>
+                </div>
+
+                <!-- CSS -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="layout" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Tailwind CSS & CSS3</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Scalable styling architecture delivering pixel-perfect responsive designs with minimal stylesheet payload and zero layout shift.
+                    </p>
+                    <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-800 text-blue-300 inline-block">Responsive Design</div>
+                </div>
+
+                <!-- JAVASCRIPT -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="terminal" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Modern JavaScript (ES6+)</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Asynchronous RESTful API communication, dynamic DOM manipulation, and interactive client-side execution logic.
+                    </p>
+                    <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-800 text-amber-300 inline-block">Client Interactivity</div>
+                </div>
+
+                <!-- PHP -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="server" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Enterprise PHP Backend</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Secure server-side processing featuring token authentication, session management, and robust middleware request handling.
+                    </p>
+                    <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-800 text-indigo-300 inline-block">Server-Side Logic</div>
+                </div>
+
+                <!-- MYSQL -->
+                <div class="bg-slate-900 border border-slate-800 hover:border-indigo-500/50 rounded-2xl p-6 transition-all group">
+                    <div class="w-12 h-12 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="database" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Relational MySQL Databases</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
+                        Optimized relational database schemas ensuring ACID transaction compliance, indexing, and high-performance querying.
+                    </p>
+                    <div class="text-xs font-mono px-3 py-1.5 rounded-lg bg-slate-800 text-cyan-300 inline-block">Data Persistence</div>
+                </div>
+
+                <!-- Power Automate Connection -->
+                <div class="bg-gradient-to-br from-indigo-950/60 to-slate-900 border border-indigo-500/30 rounded-2xl p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-violet-500/10 text-violet-400 flex items-center justify-center font-bold mb-4">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Microsoft 365 Cloud Flows</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            Connecting Microsoft Forms directly with Microsoft Entra ID and Outlook for fully automated employee onboarding pipelines.
+                        </p>
+                    </div>
+                    <a href="#power-automate" class="mt-4 text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
+                        Review Automation Flow <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Power Automate Section -->
+    <section id="power-automate" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/25 text-violet-400 text-xs font-semibold tracking-wide uppercase">
+                        <i data-lucide="workflow" class="w-3.5 h-3.5"></i> Enterprise Automation Pipeline
+                    </div>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                        Microsoft Forms to <span class="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-indigo-400">Microsoft Entra ID</span> Integration
+                    </h2>
+                    <p class="text-slate-400 text-base leading-relaxed">
+                        Streamline human resources and IT provisioning. When an onboarding questionnaire is submitted, Power Automate immediately parses data, provisions the account in Microsoft Entra ID, assigns security groups, and alerts stakeholders.
+                    </p>
+
+                    <div class="space-y-4 pt-2">
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="p-2.5 rounded-lg bg-indigo-600 text-white shrink-0 mt-0.5">
+                                <i data-lucide="file-text" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm mb-1">1. Trigger: Secure MS Form Submission</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">Captures candidate telemetry, department allocation, and reporting manager securely upon HR form submission.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="p-2.5 rounded-lg bg-violet-600 text-white shrink-0 mt-0.5">
+                                <i data-lucide="user-plus" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm mb-1">2. Action: Provision Entra ID Account</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">Generates standardized UPN nomenclature, sets secure temporary credentials, and maps role-based group assignments.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 rounded-xl bg-slate-900 border border-slate-800">
+                            <div class="p-2.5 rounded-lg bg-emerald-600 text-white shrink-0 mt-0.5">
+                                <i data-lucide="bell" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm mb-1">3. Notification: Stakeholder Alert</h4>
+                                <p class="text-slate-400 text-xs leading-relaxed">Dispatches approval confirmation via Outlook and alerts IT Service Desk for hardware logistics.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6">
+                    <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-violet-600 flex items-center justify-center text-white">
+                                    <i data-lucide="git-merge" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-white text-sm">Cloud Flow Architecture</h4>
+                                    <span class="text-xs text-emerald-400 flex items-center gap-1 mt-0.5">
+                                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Production Ready
+                                    </span>
+                                </div>
+                            </div>
+                            <span class="text-xs font-mono px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Power Automate</span>
+                        </div>
+
+                        <!-- Step visualizer -->
+                        <div class="space-y-3">
+                            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 flex items-center justify-between text-xs">
+                                <span class="flex items-center gap-2 text-slate-300"><i data-lucide="file-text" class="w-4 h-4 text-indigo-400"></i> MS Forms: Onboarding Trigger</span>
+                                <span class="font-mono text-indigo-400">Trigger</span>
+                            </div>
+                            <div class="flex justify-center my-[-4px]">
+                                <i data-lucide="arrow-down" class="w-4 h-4 text-slate-600"></i>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 flex items-center justify-between text-xs">
+                                <span class="flex items-center gap-2 text-slate-300"><i data-lucide="cpu" class="w-4 h-4 text-violet-400"></i> Parse JSON Schema & Format Credentials</span>
+                                <span class="font-mono text-violet-400">Operation</span>
+                            </div>
+                            <div class="flex justify-center my-[-4px]">
+                                <i data-lucide="arrow-down" class="w-4 h-4 text-slate-600"></i>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 flex items-center justify-between text-xs">
+                                <span class="flex items-center gap-2 text-slate-300"><i data-lucide="shield" class="w-4 h-4 text-cyan-400"></i> Microsoft Entra ID: User Provisioning</span>
+                                <span class="font-mono text-cyan-400">Azure AD</span>
+                            </div>
+                            <div class="flex justify-center my-[-4px]">
+                                <i data-lucide="arrow-down" class="w-4 h-4 text-slate-600"></i>
+                            </div>
+                            <div class="p-3 rounded-xl bg-slate-800/60 border border-slate-700/50 flex items-center justify-between text-xs">
+                                <span class="flex items-center gap-2 text-slate-300"><i data-lucide="mail-check" class="w-4 h-4 text-amber-400"></i> Outlook / Teams Notification Dispatch</span>
+                                <span class="font-mono text-amber-400">Notification</span>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-violet-950/30 border border-violet-900/40 text-xs text-violet-300 flex items-center gap-3">
+                            <i data-lucide="sparkles" class="w-5 h-5 shrink-0"></i>
+                            <span>Test the live simulation console below to observe this automation sequence execute in real-time.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE AUTOMATION SIMULATOR SECTION -->
+    <section id="simulator" class="py-20 bg-slate-900/60 border-y border-slate-800">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto space-y-4 mb-12">
+                <span class="px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+                    Interactive Demonstration
+                </span>
+                <h2 class="text-3xl font-bold text-white">Live MS Form → Entra ID Simulator</h2>
+                <p class="text-slate-400 text-sm">
+                    Enter candidate details below to simulate the complete cloud automation workflow and observe step-by-step API logging.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <!-- Simulation Form -->
+                <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    <div class="flex items-center justify-between pb-4 mb-6 border-b border-slate-800">
+                        <div class="flex items-center gap-2">
+                            <div class="w-3 h-3 rounded-full bg-indigo-500"></div>
+                            <span class="text-xs font-bold text-white uppercase tracking-wider">Simulated MS Form</span>
+                        </div>
+                        <span class="text-[11px] font-mono text-indigo-400">New Employee Intake</span>
+                    </div>
+
+                    <form id="sim-form" onsubmit="runAutomation(event)" class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">First Name</label>
+                            <input type="text" id="sim-fname" required value="Sarah" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Last Name</label>
+                            <input type="text" id="sim-lname" required value="Jenkins" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-indigo-500">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Department</label>
+                            <select id="sim-dept" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-indigo-500">
+                                <option value="Engineering">Engineering</option>
+                                <option value="Marketing">Marketing</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Operations">Operations</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-medium text-slate-300 mb-1">Manager Email</label>
+                            <input type="email" id="sim-manager" required value="manager@enterprise.com" class="w-full px-3.5 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-indigo-500">
+                        </div>
+                        <button type="submit" id="sim-btn" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 transition-all flex items-center justify-center gap-2">
+                            <i data-lucide="play" class="w-4 h-4"></i> Execute Simulation Flow
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Live Execution Console -->
+                <div class="lg:col-span-6 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                    <div class="flex items-center justify-between pb-4 mb-4 border-b border-slate-800">
+                        <div class="flex items-center gap-2">
+                            <div id="status-dot" class="w-3 h-3 rounded-full bg-slate-600"></div>
+                            <span class="text-xs font-bold text-white uppercase tracking-wider">Cloud Execution Log</span>
+                        </div>
+                        <span id="status-text" class="text-xs font-mono text-slate-400">Idle (Awaiting Input)</span>
+                    </div>
+
+                    <div id="console-logs" class="bg-slate-950 rounded-2xl p-4 border border-slate-800/80 font-mono text-xs text-slate-300 space-y-3 min-h-[280px] max-h-[320px] overflow-y-auto">
+                        <div class="text-slate-500">// Ready to execute cloud automation sequence...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies / Success Stories Section -->
+    <section id="case-studies" class="py-20 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="px-3.5 py-1.5 rounded-full bg-indigo-500/10 border border-indigo-500/25 text-indigo-400 text-xs font-semibold uppercase tracking-wider">
+                    Proven Track Record
+                </span>
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Client Case Studies & Testimonials</h2>
+                <p class="text-slate-400 text-base">
+                    Discover how custom web engineering and automated workflows have transformed enterprise operations for recent clients.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono px-3 py-1 rounded-lg bg-indigo-950 text-indigo-300 border border-indigo-900">Logistics & Supply Chain</span>
+                            <div class="flex text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Automating 400+ Monthly Employee Onboardings</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            "Adam engineered a bespoke Microsoft Power Automate pipeline linking Microsoft Forms directly to our Azure AD / Entra tenant. Onboarding times dropped from 3 days to under 2 minutes, saving our HR department hundreds of manual hours annually."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-6 mt-6 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-indigo-600/20 text-indigo-400 flex items-center justify-center font-bold text-sm">
+                            MR
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Marcus Reynolds</div>
+                            <div class="text-xs text-slate-400">IT Director, Global Freight Solutions</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-3xl p-8 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-mono px-3 py-1 rounded-lg bg-indigo-950 text-indigo-300 border border-indigo-900">Fintech & SaaS</span>
+                            <div class="flex text-amber-400">
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                                <i data-lucide="star" class="w-4 h-4 fill-amber-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">High-Performance PHP & MySQL Portal Redesign</h3>
+                        <p class="text-slate-400 text-sm leading-relaxed">
+                            "Adam audited and rebuilt our customer portal using a lean PHP backend and responsive Tailwind CSS architecture. Our query speeds improved by 350% and client conversion increased by 28% within the first month."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 pt-6 mt-6 border-t border-slate-800">
+                        <div class="w-10 h-10 rounded-full bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold text-sm">
+                            EL
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold text-white">Elena Lawson</div>
+                            <div class="text-xs text-slate-400">CTO, Apex Financial Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive ROI Calculator -->
+    <section id="portfolio" class="py-20 bg-slate-900/30 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Interactive Automation ROI Calculator</h2>
+                <p class="text-slate-400 text-base">
+                    Calculate your organization's monthly operational savings by automating manual data entry and repetitive workflows.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl">
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Hours spent weekly on repetitive manual tasks / reports:</label>
+                        <input id="calc-hours" type="range" min="2" max="40" value="15" class="w-full accent-indigo-500 cursor-pointer" oninput="calculateROI()">
+                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                            <span>2 hrs/wk</span>
+                            <span id="hours-display" class="font-bold text-indigo-400 text-sm">15 hours</span>
+                            <span>40 hrs/wk</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Average fully loaded staff hourly rate ($):</label>
+                        <input id="calc-wage" type="range" min="15" max="100" value="35" class="w-full accent-indigo-500 cursor-pointer" oninput="calculateROI()">
+                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                            <span>$15/hr</span>
+                            <span id="wage-display" class="font-bold text-indigo-400 text-sm">$35/hr</span>
+                            <span>$100/hr</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6 border-t border-slate-800">
+                        <div class="p-5 rounded-2xl bg-slate-950 border border-slate-800 text-center">
+                            <div class="text-xs text-slate-400 mb-1">Monthly Cost of Manual Work</div>
+                            <div id="monthly-cost" class="text-2xl font-extrabold text-rose-400">$2,100</div>
+                        </div>
+                        <div class="p-5 rounded-2xl bg-indigo-950/40 border border-indigo-900/60 text-center">
+                            <div class="text-xs text-indigo-300 mb-1">Estimated Monthly Savings</div>
+                            <div id="monthly-savings" class="text-2xl font-extrabold text-emerald-400">$1,890</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Let's Discuss Your Project</h2>
+                    <p class="text-slate-400 text-base leading-relaxed">
+                        Ready to elevate your web application architecture or streamline internal operations with Power Automate and Microsoft Entra ID? Get in touch for a formal proposal.
+                    </p>
+                    
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-center gap-4 text-slate-300">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Professional Inquiry Email</div>
+                                <div class="font-medium text-white">adamryanayliffe@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-slate-300">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Operational Base</div>
+                                <div class="font-medium text-white">Global Remote / UK & US Timezones</div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-center gap-4 text-slate-300">
+                            <div class="w-10 h-10 rounded-xl bg-indigo-600/20 text-indigo-400 flex items-center justify-center">
+                                <i data-lucide="clock" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Current Availability</div>
+                                <div class="font-medium text-white">Accepting Q2/Q3 Contracts & Audits</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <form action="https://formsubmit.co/adamryanayliffe@gmail.com" method="POST" class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl space-y-6">
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="Enterprise Inquiry from Professional Portfolio!">
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Full Name</label>
+                                <input type="text" name="name" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-indigo-500 text-sm" placeholder="Jane Doe">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-slate-300 mb-2">Business Email</label>
+                                <input type="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-indigo-500 text-sm" placeholder="jane@enterprise.com">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Engagement Type</label>
+                            <select name="service_type" class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-indigo-500 text-sm">
+                                <option>Custom Web Development</option>
+                                <option>UI/UX Interface Design</option>
+                                <option>Workflow Automation (Power Automate / Entra ID)</option>
+                                <option>Technical Advisory & Architecture Audit</option>
+                                <option>Enterprise Staff Training Program</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-300 mb-2">Project Scope & Objectives</label>
+                            <textarea name="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white focus:outline-none focus:border-indigo-500 text-sm" placeholder="Describe your technical requirements, timelines, and business objectives..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg shadow-indigo-600/30 transition-all">
+                            Submit Proposal Request
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center font-bold text-sm text-white">
+                    AA
+                </div>
+                <span class="font-bold text-white tracking-tight">Adam Ayliffe</span>
+            </div>
+            <p class="text-xs text-slate-500">
+                &copy; 2026 Adam Ayliffe. Enterprise Web Development & Automation Architect. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // ROI Calculator Logic
+        function calculateROI() {
+            const hours = document.getElementById('calc-hours').value;
+            const wage = document.getElementById('calc-wage').value;
+
+            document.getElementById('hours-display').innerText = hours + ' hours';
+            document.getElementById('wage-display').innerText = '$' + wage + '/hr';
+
+            const monthlyCost = hours * wage * 4;
+            const monthlySavings = Math.round(monthlyCost * 0.9);
+
+            document.getElementById('monthly-cost').innerText = '$' + monthlyCost.toLocaleString();
+            document.getElementById('monthly-savings').innerText = '$' + monthlySavings.toLocaleString();
+        }
+
+        calculateROI();
+
+        // Live Automation Simulator Script
+        async function runAutomation(e) {
+            e.preventDefault();
+            const fname = document.getElementById('sim-fname').value;
+            const lname = document.getElementById('sim-lname').value;
+            const dept = document.getElementById('sim-dept').value;
+            const manager = document.getElementById('sim-manager').value;
+            const btn = document.getElementById('sim-btn');
+            const logs = document.getElementById('console-logs');
+            const dot = document.getElementById('status-dot');
+            const statusText = document.getElementById('status-text');
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50', 'cursor-not-allowed');
+            logs.innerHTML = '';
+
+            dot.className = "w-3 h-3 rounded-full bg-amber-500 animate-pulse";
+            statusText.innerText = "Executing Cloud Pipeline...";
+
+            const upn = `${fname.toLowerCase()}.${lname.toLowerCase()}@enterprise.com`;
+
+            const steps = [
+                { msg: `[MS Forms] New onboarding payload received: ${fname} ${lname} (${dept})`, type: 'text-indigo-400' },
+                { msg: `[Power Automate] Cloud flow triggered. Validating OAuth 2.0 bearer token...`, type: 'text-slate-300' },
+                { msg: `[Power Automate] Variable assigned: Principal Name generated as <span class="text-yellow-300">${upn}</span>`, type: 'text-slate-300' },
+                { msg: `[Microsoft Entra ID] Calling Graph API /v1.0/users endpoint... Provisioning secure user profile.`, type: 'text-cyan-400' },
+                { msg: `[Microsoft Entra ID] Success! Object ID created: <span class="font-mono text-emerald-400">usr_88a4c12f_ent</span>`, type: 'text-emerald-400' },
+                { msg: `[Power Automate] Dispatched automated approval request to manager: <span class="text-indigo-300">${manager}</span>`, type: 'text-violet-400' },
+                { msg: `[Outlook & Teams] Hardware requisition notice forwarded to IT Service Desk successfully.`, type: 'text-amber-400' },
+                { msg: `[Pipeline Complete] All 4 enterprise actions executed successfully in 1.18 seconds.`, type: 'text-emerald-400 font-bold' }
+            ];
+
+            for (let i = 0; i < steps.length; i++) {
+                await new Promise(r => setTimeout(r, 600));
+                const div = document.createElement('div');
+                div.className = steps[i].type;
+                div.innerHTML = `> ${steps[i].msg}`;
+                logs.appendChild(div);
+                logs.scrollTop = logs.scrollHeight;
+            }
+
+            dot.className = "w-3 h-3 rounded-full bg-emerald-500";
+            statusText.innerText = "Workflow Executed Successfully";
+            btn.disabled = false;
+            btn.classList.remove('opacity-50', 'cursor-not-allowed');
+        }
+    </script>
+</body>
+</html>
